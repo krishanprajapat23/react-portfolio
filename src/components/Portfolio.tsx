@@ -53,7 +53,7 @@ const Portfolio = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group/card card overflow-hidden hover:[background:var(--theme-gradient)] hover:-translate-y-2 hover:rounded-xl transition-all ease-smooth duration-300">
-              <span className="block relative overflow-hidden radius-2 before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:opacity-0 before:transition group-hover/card:before:opacity-100">
+              <span className="block relative radius-2 before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:opacity-0 before:transition group-hover/card:before:opacity-100">
                 <span className="absolute top-[50%] left-[50%] translate-[-50%] fw-bold text-white opacity-0 group-hover/card:opacity-100 transition group-hover/card:translate-y-1">Click to Open &#10532;</span>
                 <img
                   src={repo.imageUrl}

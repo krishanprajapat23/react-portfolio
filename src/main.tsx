@@ -1,5 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+// Import Swiper styles
+import "swiper/css";
 import './assets/css/index.css'
 import './assets/css/main.scss'
 import App from './App.tsx'

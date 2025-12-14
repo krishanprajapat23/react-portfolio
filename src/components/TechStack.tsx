@@ -2,8 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
-// Import Swiper styles
-import "swiper/css";
+
 
 // importing all the tech images.
 import HTMLImg from "../assets/images/html.webp";

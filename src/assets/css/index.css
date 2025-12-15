@@ -48,10 +48,6 @@
     @apply md:text-base text-sm;
   }
 
-  hr {
-    @apply w-[100px] bg-transparent mx-auto my-0 border-t-3 border-dashed border-(--dark-grey-color);
-  }
-
   .header-fixed {
     @apply fixed top-0 left-0 right-0 z-999 backdrop-blur-sm shadow-md animate-fadeInDown;
   }

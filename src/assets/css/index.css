@@ -1,6 +1,9 @@
 @import "./theme.css";
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+
+
 
 /* theme based base styling */
 @layer base {

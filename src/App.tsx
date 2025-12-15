@@ -1,17 +1,21 @@
-import { Header, HeroSection, Skills, TechStack, Portfolio, Contact, Footer } from "./components/index";
+import {Header, Footer} from "./components/layout";
+import { Divider } from "./components/ui";
+import { HeroSection, Skills, TechStack, Portfolio, Contact } from "./components/sections";
 
 function App() {
   return (
     <>
       <Header />
-      <HeroSection />
-      <Skills />
-      <hr/>
-      <TechStack />
-      <hr/>
-      <Portfolio/>
-      <hr/>
-      <Contact />
+      <main>
+        <HeroSection />
+        <Skills />
+        <Divider/>
+        <TechStack />
+        <Divider/>
+        <Portfolio/>
+        <Divider/>
+        <Contact />
+      </main>
       <Footer />
 
     </>

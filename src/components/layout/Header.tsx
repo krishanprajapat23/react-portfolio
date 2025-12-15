@@ -1,5 +1,5 @@
 import { useState, Activity } from "react";
-import { useScrolled } from "../hooks/useScrolled";
+import { useScrolled } from "../../hooks/useScrolled";
 
 
 interface NavItem { 

@@ -1,5 +1,5 @@
-import { Button } from "./index";
-import ContactImage from "../assets/images/contact.webp";
+import { Button } from "../ui";
+import ContactImage from "../../assets/images/contact.webp";
 
 const Contact = () => {
   return (

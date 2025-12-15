@@ -1,5 +1,5 @@
-import webDesignImg from "../assets/images/web-design-img.png";
-import webDevImg from "../assets/images/web-dev-img.png";
+import webDesignImg from "../../assets/images/web-design-img.png";
+import webDevImg from "../../assets/images/web-dev-img.png";
 
 interface SkillCard {
     id: number;

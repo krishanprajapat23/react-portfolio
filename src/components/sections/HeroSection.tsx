@@ -1,5 +1,5 @@
-import { Button } from "./index";
-import heroImg from "../assets/images/hero-img.webp";
+import { Button } from "../ui";
+import heroImg from "../../assets/images/hero-img.webp";
 
 const HeroSection = () => {
   return (

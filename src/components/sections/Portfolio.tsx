@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Skeleton } from "./index";
-import { fetchGitRepos } from "../services/index";
-import type { GithubRepo } from "../types/GithubRepo";
-import fallbackImg from "../assets/images/fallback.webp";
+import { Skeleton } from "../ui";
+import { fetchGitRepos } from "../../services/index";
+import type { GithubRepo } from "../../types/GithubRepo";
+import fallbackImg from "../../assets/images/fallback.webp";
 
 const Portfolio = () => {
   const [repos, setRepos] = useState<GithubRepo[]>([]);

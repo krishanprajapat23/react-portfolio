@@ -5,17 +5,17 @@ import { Autoplay } from "swiper/modules";
 
 
 // importing all the tech images.
-import HTMLImg from "../assets/images/html.webp";
-import CSSImg from "../assets/images/css.webp";
-import SCSSImg from "../assets/images/scss.webp";
-import JSImg from "../assets/images/js.webp";
-import TSCImg from "../assets/images/tsc.webp";
-import BootstrapImg from "../assets/images/bootstrap.webp";
-import TailwindImg from "../assets/images/tailwind.webp";
-import ReactImg from "../assets/images/react.webp";
-import GitImg from "../assets/images/github.webp";
-import PSImg from "../assets/images/ps.webp";
-import FigmaImg from "../assets/images/figma.webp";
+import HTMLImg from "../../assets/images/html.webp";
+import CSSImg from "../../assets/images/css.webp";
+import SCSSImg from "../../assets/images/scss.webp";
+import JSImg from "../../assets/images/js.webp";
+import TSCImg from "../../assets/images/tsc.webp";
+import BootstrapImg from "../../assets/images/bootstrap.webp";
+import TailwindImg from "../../assets/images/tailwind.webp";
+import ReactImg from "../../assets/images/react.webp";
+import GitImg from "../../assets/images/github.webp";
+import PSImg from "../../assets/images/ps.webp";
+import FigmaImg from "../../assets/images/figma.webp";
 
 interface Tech {
   id: number;

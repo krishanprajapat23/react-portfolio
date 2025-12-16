@@ -2,6 +2,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
+import { fadeUp, slideUp, staggerContainer } from "../motion/variants";
+import { motion } from "motion/react";
+
 
 
 // importing all the tech images.
@@ -39,53 +42,72 @@ const techData: Tech[] = [
 
 const TechStack = () => {
   return (
-    <section id="techstack" className="group w-full py-20">
+    <motion.section 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}  
+      id="techstack" 
+      className="group w-full py-20"
+    >
       <div className="container mx-auto px-4">
         <div className="p-2 mb-5">
-          <h2 className="text-center capitalize">
+          <motion.h2 
+            variants={slideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center capitalize">
             <span className="group-hover:text-(--primary-color) transition-colors">Technologies</span> I work with.
-          </h2>
+          </motion.h2>
         </div>
-        <Swiper
-          modules={[Autoplay]}
-          allowTouchMove={false}
-          simulateTouch={false}
-          keyboard={false}
-          mousewheel={false}
-          autoplay={{
-            delay: 0,
-            pauseOnMouseEnter: false,
-            disableOnInteraction: true,
-            stopOnLastSlide: false,
-          }}
-          speed={8000}
-          slidesPerView={3}
-          spaceBetween={5}
-          loop={true}
-          freeMode={false}
-          breakpoints={{
-            390: { slidesPerView: 4 },
-            1024: { slidesPerView: 5 },
-            1200: { slidesPerView: 6 },
-          }}
-          className="w-full py-10 select-none"
-        >
-          {techData.map((tech) => (
-            <SwiperSlide key={tech.id}>
-              <div className="group/img-wrapper m-2 overflow-hidden aspect-square rounded-md">
-                <img
-                  src={tech.imageSrc}
-                  alt={tech.title}
-                  title={tech.title}
-                  className="h-full w-full object-cover transition-transform duration-2000 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover/img-wrapper:scale-[1.15] group-hover/img-wrapper:rotate-[5deg]"
-                  draggable={false}
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+      >
+          <Swiper
+            modules={[Autoplay]}
+            allowTouchMove={false}
+            simulateTouch={false}
+            keyboard={false}
+            mousewheel={false}
+            autoplay={{
+              delay: 0,
+              pauseOnMouseEnter: false,
+              disableOnInteraction: true,
+              stopOnLastSlide: false,
+            }}
+            speed={8000}
+            slidesPerView={3}
+            spaceBetween={5}
+            loop={true}
+            freeMode={false}
+            breakpoints={{
+              390: { slidesPerView: 4 },
+              1024: { slidesPerView: 5 },
+              1200: { slidesPerView: 6 },
+            }}
+            className="w-full py-10 select-none"
+          >
+            {techData.map((tech) => (
+              <SwiperSlide key={tech.id}>
+                <div className="group/img-wrapper m-2 overflow-hidden aspect-square rounded-md">
+                  <img
+                    src={tech.imageSrc}
+                    alt={tech.title}
+                    title={tech.title}
+                    className="h-full w-full object-cover transition-transform duration-2000 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover/img-wrapper:scale-[1.15] group-hover/img-wrapper:rotate-[5deg]"
+                    draggable={false}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

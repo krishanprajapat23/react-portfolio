@@ -2,8 +2,12 @@ import {Header, Footer} from "./components/layout";
 import { Divider } from "./components/ui";
 import { HeroSection, Skills, TechStack, Portfolio, Contact } from "./components/sections";
 
+import { LazyMotion, domAnimation } from "motion/react"
+
+
 function App() {
   return (
+    <LazyMotion features={domAnimation}>
     <>
       <Header />
       <main>
@@ -17,8 +21,8 @@ function App() {
         <Contact />
       </main>
       <Footer />
-
     </>
+    </LazyMotion>
   );
 }
 

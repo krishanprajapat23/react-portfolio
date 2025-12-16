@@ -4,6 +4,9 @@ import { fetchGitRepos } from "../../services/index";
 import type { GithubRepo } from "../../types/GithubRepo";
 import fallbackImg from "../../assets/images/fallback.webp";
 
+import { fadeUp, staggerContainer, slideUp  } from "../motion/variants";
+import {motion} from "motion/react";
+
 const Portfolio = () => {
   const [repos, setRepos] = useState<GithubRepo[]>([]);
   const [loading, setLoading] = useState(true);
@@ -26,28 +29,50 @@ const Portfolio = () => {
 
   if (loading) {
     return (
-      <section className="py-10">
+      <motion.section
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="py-10"
+      >
         <div className="p-2 mb-5">
-          <h2 className="text-center capitalize">
+          <motion.h2 
+            variants={slideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}           
+            className="text-center capitalize">
             What I <span className="group-hover:text-(--primary-color) transition-colors">made.</span>
-          </h2>
+          </motion.h2>
         </div>
         <PortfolioSkeleton />
-      </section>
+      </motion.section>
     );
   }
 
   return (
-    <section id="portfolio" className="group portfolio-section py-20">
+    <motion.section 
+      variants={staggerContainer} // stagger all children (heading + cards)
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      id="portfolio" className="group portfolio-section py-20">
       <div className="container mx-auto px-4">
         <div className="p-2 mb-5">
-          <h2 className="text-center capitalize">
+           <motion.h2 
+            variants={slideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}           
+            className="text-center capitalize">
             What I <span className="group-hover:text-(--primary-color) transition-colors">made.</span>
-          </h2>
+          </motion.h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {repos.map((repo) => (
-            <a
+            <motion.a
+              variants={fadeUp}
               key={repo.id}
               href={repo.homepage}
               target="_blank"
@@ -67,11 +92,11 @@ const Portfolio = () => {
 
               <h4 className="capitalize mb-2 group-hover/card:text-(--white-color)">{repo.name.replace(/[-_]/g, " ")}</h4>
               {repo.description && <p className="group-hover/card:text-(--primary-t-color)">{repo.description}</p>}
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

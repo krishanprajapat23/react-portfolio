@@ -1,22 +1,39 @@
 import { Button } from "../ui";
 import heroImg from "../../assets/images/hero-img.webp";
 
+import { zoomOutUp, staggerContainer } from "../motion/variants";
+import { motion } from "motion/react";
+
+
 const HeroSection = () => {
   return (
-    <section id="about" className="w-full pt-5 xl:min-h-[calc(100vh-80px)]">
+    <motion.section 
+      variants={staggerContainer}       // staggered children entrance
+      initial="hidden"
+      whileInView="visible"              // triggers on scroll
+      viewport={{ once: true }}
+      id="about" 
+      className="w-full pt-5 xl:min-h-[calc(100vh-80px)]"
+    >
       <div className="container mx-auto px-4">
         <div className="w-full md:flex items-center justify-between">
           <div className="w-full sm:py-10 space-y-2">
-            <h1 className="gradient-text">
+            <motion.h1 
+              variants={zoomOutUp}           
+              className="gradient-text">
                 Hello!
                 <br />
                 I'm Krishan.
-            </h1>
-            <p className="text-lg">
+            </motion.h1>
+            <motion.p 
+              variants={zoomOutUp}
+              className="text-lg">
               I design and develop web apps that are fast, reliable, and visually engaging for a better user experience.
-            </p>
-            <div className="full-w mt-5">
-              <Button
+            </motion.p>
+            <motion.div 
+              variants={zoomOutUp}
+              className="w-auto mt-5">
+              <Button                
                 href="#contact"
                 icon={
                   <svg
@@ -37,16 +54,21 @@ const HeroSection = () => {
               >
                 Get Started
               </Button>
-            </div>
+            </motion.div>
           </div>
           {/* RIGHT IMAGE */}
           <div className="w-full mx-auto">
-            <img src={heroImg} alt="Hero" className="w-full object-cover" />
+            <motion.img 
+              variants={zoomOutUp}
+              src={heroImg} 
+              alt="Hero" 
+              className="w-full object-cover" 
+            />
           </div>
         </div>
       </div>
       <h1></h1>
-    </section>
+    </motion.section>
   );
 };
 

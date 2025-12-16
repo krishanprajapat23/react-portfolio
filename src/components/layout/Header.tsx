@@ -1,9 +1,7 @@
 import { useState, Activity } from "react";
-// import { useScrolled } from "../../hooks/useScrolled";
-
+// framer motion
 import { motion } from "motion/react";
 import { useStickyHeader } from "../../hooks/useStickyHeader";
-
 
 interface NavItem { 
     id: string; 
@@ -23,8 +21,6 @@ const NAV_ITEMS: NavItem[] = [
 const Header = () => {
     const [isShowingSidebar, setIsShowingSidebar] = useState(false);
     const isSticky = useStickyHeader(100);
-    
-    // const scrolled = useScrolled(100);
 
     return (
         <>
